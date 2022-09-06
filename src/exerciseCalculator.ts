@@ -10,7 +10,7 @@ interface result {
 }
 
 // Args: array of numbers, target number
-const exerciseCalculator = (trainingHours: Array<number>, target: number): void => {
+const exerciseCalculator = (target: number, trainingHours: Array<number>): void => {
     // Initial values
     const trainingResult: result = {
         periodLength: trainingHours.length,
@@ -39,4 +39,19 @@ const exerciseCalculator = (trainingHours: Array<number>, target: number): void 
     console.log(trainingResult);
 };
 
-exerciseCalculator([3, 0, 2, 4.5, 0, 3, 1], 2);
+// Get the values from the cmd line
+const targetArgument: number = Number(process.argv[2]);
+// Get the training hours from the cmd line and slice the first two
+const trainingHours: Array<number> = process.argv.slice(3).map(hours => Number(hours));
+
+// Error handling
+if (process.argv.length < 4) {
+    throw new Error("Not enough arguments");
+} else if (isNaN(targetArgument) || trainingHours.some(hours => isNaN(hours))) {
+    throw new Error("Invalid input"); // If the arguments are not numbers
+} else if (targetArgument < 0 || trainingHours.some(hours => hours < 0)) {
+    throw new Error("Numbers cannot be negative");
+} else {
+    // Call the function with the provided arguments
+    exerciseCalculator(targetArgument, trainingHours);
+}
