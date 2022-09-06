@@ -1,0 +1,22 @@
+{
+  "name": "fullstackopenpart9",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "ts-node": "ts-node",
+    "calculateBmi": "ts-node src/bmiCalculator.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erictelkkala/FullStackOpenPart9.git"
+  },
+  "author": "Eric Telkkälä",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erictelkkala/FullStackOpenPart9/issues"
+  },
+  "homepage": "https://github.com/erictelkkala/FullStackOpenPart9#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.15"
+  }
+}
