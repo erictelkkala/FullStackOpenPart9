@@ -1,6 +1,6 @@
 //  Get the values from the cmd line
-const height: number = Number(process.argv[2]);
-const weight: number = Number(process.argv[3]);
+const height = Number(process.argv[2]);
+const weight = Number(process.argv[3]);
 
 const calculateBMI = (height: number, weight: number): void => {
     const BMI: number = weight / Math.pow((height / 100), 2);

@@ -40,7 +40,7 @@ const exerciseCalculator = (target: number, trainingHours: Array<number>): void 
 };
 
 // Get the values from the cmd line
-const targetArgument: number = Number(process.argv[2]);
+const targetArgument = Number(process.argv[2]);
 // Get the training hours from the cmd line and slice the first two
 const trainingHours: Array<number> = process.argv.slice(3).map(hours => Number(hours));
 
